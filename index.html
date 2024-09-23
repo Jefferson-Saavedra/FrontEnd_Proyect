@@ -40,11 +40,12 @@
 	                </li>
 	            </ul>
 	        </nav>
+			<!-- funcion de javascript trabajada en main.js, para que se despliegue el formulario de inicio de sesion o Formulario de perfil-->
 	        <div class="header-button full-box text-center btn-login-menu" >
 	            <i class="fas fa-user-alt" onclick="show_popup_login()" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Login" ></i>
 	            <div class="div-bordered popup-login">
 
-	                <!-- Inicio de sesion -->
+	                <!-- Formulario Inicio de sesion -->
 	                <span class="text-center poppins-regular font-weight-bold">Inicio de sesión</span>
 	                <form class="full-box" action="">
 	                    <div class="form-outline mb-4">
@@ -60,7 +61,7 @@
 	                <hr>
 	                <p class="text-center full-box">¿No tienes cuenta? <a href="registration.html">Regístrate aquí</a></p>
 
-	                <!-- Cerrar sesion --
+	                <!-- Formulario perfil -->
 	                <div class="text-center full-box">
 	                    <i class="fas fa-user-circle fa-4x"></i>
 	                </div>
@@ -73,19 +74,21 @@
 	                </div>
 	                <form class="full-box" action="">
 	                    <button class="btn btn-raised btn-primary btn-sm w-100" ><i class="fas fa-door-open fa-fw"></i> &nbsp; Cerrar sesión</button>
-	                </form>-->
+	                </form>
+					<!-- Cierre de sesion -->
 	                
 	            </div>
 	        </div>
 	        <a href="bag.html" class="header-button full-box text-center" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Carrito" >
 	            <i class="fas fa-shopping-bag"></i>
+				<!-- Notificacion -->
 	            <span class="badge bg-warning rounded-pill bag-count" >2</span>
 	        </a>
 	    </div>
 	</header>
 
 
-	<!-- Content -->
+	<!-- Content banner -->
 	<div class="banner">
 	    <div class="banner-body">
 	        <h3 class="text-uppercase">¡Descubre la Variedad y Calidad en Emazon!</h3>
@@ -94,6 +97,7 @@
 	    </div>
 	</div>
 
+	<!-- Services , segmentado en tres columnas-->
 	<div class="container container-web-page">
 	    <h3 class="text-center text-uppercase poppins-regular font-weight-bold">Nuestros servicios</h3>
 	    <br>
@@ -104,7 +108,7 @@
 	            <p class="text-center">Disfruta de la comodidad de recibir tus productos directamente en la puerta de tu casa.  ¡Haz tu pedido hoy y experimenta la facilidad de comprar desde casa!</p>
 	        </div>
 	        <div class="col-12 col-sm-6 col-md-4">
-	            <p class="text-center"><i class="fas fa-utensils fa-5x"></i></p>
+	            <p class="text-center"><i class="fas fa-mobile fa-5x"></i></p>
 	            <h5 class="text-center text-uppercase poppins-regular font-weight-bold">Ventas al por mayor</h5>
 	            <p class="text-center">¿Tienes un negocio y buscas productos de calidad? En Emazon ofrecemos precios especiales para compras al por mayor.  Contáctanos para obtener más información sobre nuestras ofertas exclusivas.</p>
 	        </div>
@@ -117,52 +121,56 @@
 	</div>
 
 	<hr>
-
+	<!-- Products - Sirve de plantilla-->
 	<div class="container-fluid container-web-page">
 	    <h3 class="text-center text-uppercase poppins-regular font-weight-bold">Lo más popular</h3>
 	    <div class="container-cards full-box">
-
+			<!-- Producto -->
 	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/platillos/platillo.jpg" alt="nombre_platillo">
-	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
+				<!--Imagen -->
+	            <img class="card-img-top" src="./assets/productos/producto1.jpg" alt="nombre_producto">
+	            <!--Cuerpo -->
+				<div class="card-body text-center">
+	                <h5 class="card-title font-weight-bold">Monitor Janus LED 32</h5>
+	                <p class="card-text lead"><span class="badge bg-secondary">$1.500.000</span></p>
 	            </div>
+				<!-- Pie -->
 	            <div class="card-body text-center">
 	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
 	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
+	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-mobile fa-fw"></i> &nbsp; Detalles</a>
 	            </div>
 	        </div>
 
 	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/img/img_not_found.jpg" alt="nombre_platillo">
+	            <img class="card-img-top" src="./assets/productos/producto2.jpg" alt="nombre_producto">
 	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
+	                <h5 class="card-title font-weight-bold">Iphone 12</h5>
+	                <p class="card-text lead"><span class="badge bg-secondary">$3.400.000</span></p>
 	            </div>
 	            <div class="card-body text-center">
 	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
 	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
+	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-mobile fa-fw"></i> &nbsp; Detalles</a>
 	            </div>
 	        </div>
 
 	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/platillos/platillo.jpg" alt="nombre_platillo">
+	            <img class="card-img-top" src="./assets/productos/producto3.jpg" alt="nombre_producto">
 	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
+	                <h5 class="card-title font-weight-bold">Playstation 4 Pro + Call of Duty Modern Warfare</h5>
+	                <p class="card-text lead"><span class="badge bg-secondary">$4.000.000</span></p>
 	            </div>
 	            <div class="card-body text-center">
 	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
 	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
+	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-mobile fa-fw"></i> &nbsp; Detalles</a>
 	            </div>
 	        </div>
 
 	    </div>
 	    <br>
+		<!--URL menu para filtrar produtos-->
 	    <p class="text-center"><a href="menu.html" class="btn btn-primary"><i class="fas fa-hamburger fa-fw"></i> &nbsp; Ir al menu</a></p>
 	</div>
 
@@ -179,7 +187,7 @@
 	        <div class="col-12 col-md-6">
 	            <h3 class="text-center text-uppercase poppins-regular font-weight-bold">Crea tu cuenta</h3>
 	            <p class="text-justify">
-	                Crea tu cuenta para poder realizar pedidos de platillos hasta la puesta de tu casa, es muy fácil y rápido.
+	                Crea tu cuenta para poder realizar pedidos hasta la puerta de tu casa, es muy fácil y rápido.
 	            </p>
 	            <p class="text-center">
 	                <a href="registration.html" class="btn btn-primary" >Crear cuenta</a>

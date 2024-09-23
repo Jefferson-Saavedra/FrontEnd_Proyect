@@ -21,12 +21,14 @@
 
 	<!-- Header -->
 	<header class="header full-box">
+
+		<!-- Logo de la empresa ficticia Creada por el equipo de desarrollo -->
 	    <div class="header-brand text-center full-box">
 	        <a href="index.html">
 	            <img src="./assets/img/logo.png" alt="logo" class="img-fluid">
 	        </a>
 	    </div>
-
+		<!--Menu-->
 	    <div class="header-options full-box">
 	        <nav class="header-navbar full-box poppins-regular font-weight-bold" >
 	            <ul class="list-unstyled full-box">
@@ -38,11 +40,12 @@
 	                </li>
 	            </ul>
 	        </nav>
+			<!-- funcion de javascript trabajada en main.js, para que se despliegue el formulario de inicio de sesion o Formulario de perfil-->
 	        <div class="header-button full-box text-center btn-login-menu" >
 	            <i class="fas fa-user-alt" onclick="show_popup_login()" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Login" ></i>
 	            <div class="div-bordered popup-login">
 
-	                <!-- Inicio de sesion -->
+	                <!-- Formulario Inicio de sesion -->
 	                <span class="text-center poppins-regular font-weight-bold">Inicio de sesión</span>
 	                <form class="full-box" action="">
 	                    <div class="form-outline mb-4">
@@ -58,7 +61,7 @@
 	                <hr>
 	                <p class="text-center full-box">¿No tienes cuenta? <a href="registration.html">Regístrate aquí</a></p>
 
-	                <!-- Cerrar sesion --
+	                <!-- Formulario perfil -->
 	                <div class="text-center full-box">
 	                    <i class="fas fa-user-circle fa-4x"></i>
 	                </div>
@@ -71,12 +74,14 @@
 	                </div>
 	                <form class="full-box" action="">
 	                    <button class="btn btn-raised btn-primary btn-sm w-100" ><i class="fas fa-door-open fa-fw"></i> &nbsp; Cerrar sesión</button>
-	                </form>-->
+	                </form>
+					<!-- Cierre de sesion -->
 	                
 	            </div>
 	        </div>
 	        <a href="bag.html" class="header-button full-box text-center" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Carrito" >
 	            <i class="fas fa-shopping-bag"></i>
+				<!-- Notificacion -->
 	            <span class="badge bg-warning rounded-pill bag-count" >2</span>
 	        </a>
 	    </div>
@@ -85,20 +90,25 @@
 
 	<!-- Content -->
 	<div class="container container-web-page">
-	    <h3 class="font-weight-bold poppins-regular text-uppercase">Menú de platillos</h3>
-	    <p class="text-justify">Bienvenido al menú de platillos, acá encontrara todos los platillos disponibles en el restaurante. Puede ordenar los platillos por categoría en el botón "<i class="fas fa-hamburger fa-fw"></i> MENÚ" y también ordenarlos por orden alfabético o por precio en el botón "<i class="fas fa-sort-alpha-down fa-fw"></i> ORDENAR POR". Además, puede buscar platillos por nombre haciendo clic en el botón "<i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR"</p>
+	    <h3 class="font-weight-bold poppins-regular text-uppercase">Catálogo de Productos</h3>
+	    <p class="text-justify">Bienvenido a Emazon, acá encontrara los mejores productos tecnológicos. Puede ordenar los disponibles por categoría 
+	    	haciendo clic en el botón "<i class="fas fa-mobile fa-fw"></i> MENÚ" y 
+			también ordenarlos por orden alfabético o por precio en el botón "<i class="fas fa-sort-alpha-down fa-fw"></i> 
+			ORDENAR POR". Además, puede filtrar los productos por nombre haciendo clic en el botón "<i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR"</p>
 
+		<!-- Seccion orientada a filtrar los productos-->
 	    <div class="container-fluid" style="border-top: 1px solid #E1E1E1; padding: 20px; ">
 	        <div class="row align-items-center">
 	            <div class="col-12 col-sm-4 text-center text-sm-start">
 	                <div class="dropdown">
 	                    <button class="btn btn-link dropdown-toggle" type="button" id="categorySubMenu" data-mdb-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                        <i class="fas fa-hamburger fa-fw"></i> &nbsp; Menú
+	                        <i class="fas fa-mobile fa-fw"></i> &nbsp; Menú
 	                    </button>
+						
 	                    <div class="dropdown-menu" aria-labelledby="categorySubMenu">
-	                        <a class="dropdown-item" href="#">Menú 1</a>
-	                        <a class="dropdown-item" href="#">Menú 2</a>
-	                        <a class="dropdown-item" href="#">Menú 3</a>
+	                        <a class="dropdown-item" href="#">Tablets</a>
+	                        <a class="dropdown-item" href="#">Smartphone</a>
+	                        <a class="dropdown-item" href="#">Videojuegos</a>
 	                    </div>
 	                </div>
 	            </div>
@@ -127,7 +137,7 @@
 	    <div class="container-fluid" style="padding: 20px 0;">
 	        <div class="row">
 	            <div class="col-12 col-md-8">
-	                <p class="text-left lead"><i class="fas fa-search fa-fw"></i> &nbsp; Resultados de la búsqueda: <span class="font-weight-bold poppins-regular text-uppercase">Platillo</span></p>
+	                <p class="text-left lead"><i class="fas fa-search fa-fw"></i> &nbsp; Resultados de la búsqueda: <span class="font-weight-bold poppins-regular text-uppercase">Producto</span></p>
 	            </div>
 	            <div class="col-12 col-md-4">
 	                <button type="button" class="btn btn-danger">
@@ -137,14 +147,29 @@
 	        </div>
 	    </div>
 
-
-	    <div class="container-cards full-box" style="padding-bottom: 40px;">
+		<div class="container-cards full-box" style="padding-bottom: 40px;">
+			<!-- Producto -->
+	        <div class="card shadow-1-strong">
+				<!--Imagen -->
+	            <img class="card-img-top" src="./assets/productos/producto1.jpg" alt="nombre_producto">
+	            <!--Cuerpo -->
+				<div class="card-body text-center">
+	                <h5 class="card-title font-weight-bold">Monitor Janus LED 32</h5>
+	                <p class="card-text lead"><span class="badge bg-secondary">$1.500.000</span></p>
+	            </div>
+				<!-- Pie -->
+	            <div class="card-body text-center">
+	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
+	                &nbsp; &nbsp;
+	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
+	            </div>
+	        </div>
 
 	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/platillos/platillo.jpg" alt="nombre_platillo">
+	            <img class="card-img-top" src="./assets/productos/producto2.jpg" alt="nombre_producto">
 	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
+	                <h5 class="card-title font-weight-bold">Iphone 12</h5>
+	                <p class="card-text lead"><span class="badge bg-secondary">$3.400.000</span></p>
 	            </div>
 	            <div class="card-body text-center">
 	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
@@ -154,11 +179,27 @@
 	        </div>
 
 	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/img/img_not_found.jpg" alt="nombre_platillo">
+	            <img class="card-img-top" src="./assets/productos/producto3.jpg" alt="nombre_producto">
 	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
+	                <h5 class="card-title font-weight-bold">Playstation 4 Pro + Call of Duty Modern Warfare</h5>
+	                <p class="card-text lead"><span class="badge bg-secondary">$4.000.000</span></p>
 	            </div>
+	            <div class="card-body text-center">
+	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
+	                &nbsp; &nbsp;
+	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
+	            </div>
+	        </div>
+
+			<div class="card shadow-1-strong">
+				<!--Imagen -->
+	            <img class="card-img-top" src="./assets/productos/producto1.jpg" alt="nombre_producto">
+	            <!--Cuerpo -->
+				<div class="card-body text-center">
+	                <h5 class="card-title font-weight-bold">Monitor Janus LED 32</h5>
+	                <p class="card-text lead"><span class="badge bg-secondary">$1.500.000</span></p>
+	            </div>
+				<!-- Pie -->
 	            <div class="card-body text-center">
 	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
 	                &nbsp; &nbsp;
@@ -167,9 +208,9 @@
 	        </div>
 
 	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/platillos/platillo.jpg" alt="nombre_platillo">
+	            <img class="card-img-top" src="./assets/img/img_not_found.jpg" alt="nombre_producto">
 	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
+	                <h5 class="card-title font-weight-bold">Nombre o titulo del producto</h5>
 	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
 	            </div>
 	            <div class="card-body text-center">
@@ -178,12 +219,11 @@
 	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
 	            </div>
 	        </div>
-
 	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/platillos/platillo.jpg" alt="nombre_platillo">
+	            <img class="card-img-top" src="./assets/productos/producto3.jpg" alt="nombre_producto">
 	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
+	                <h5 class="card-title font-weight-bold">Playstation 4 Pro + Call of Duty Modern Warfare</h5>
+	                <p class="card-text lead"><span class="badge bg-secondary">$4.000.000</span></p>
 	            </div>
 	            <div class="card-body text-center">
 	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
@@ -191,35 +231,7 @@
 	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
 	            </div>
 	        </div>
-
-	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/img/img_not_found.jpg" alt="nombre_platillo">
-	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
-	            </div>
-	            <div class="card-body text-center">
-	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
-	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
-	            </div>
-	        </div>
-
-	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/platillos/platillo.jpg" alt="nombre_platillo">
-	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del platillo</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
-	            </div>
-	            <div class="card-body text-center">
-	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
-	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
-	            </div>
-	        </div>
-
 	    </div>
-
 
 	    <nav aria-label="Page navigation example">
 	        <ul class="pagination justify-content-center">
@@ -243,18 +255,18 @@
 
 	</div>
 
-	<!-- Modal -->
+	<!-- Modal, se expande clickear buscar -->
 	<div class="modal fade" id="saucerModal" tabindex="-1" aria-hidden="true" aria-labelledby="saucerModalLabel" aria-hidden="true">
 	    <div class="modal-dialog" role="document">
 	        <div class="modal-content">
 	            <div class="modal-header">
-	                <h5 class="modal-title" id="saucerModalLabel">Buscar platillo</h5>
+	                <h5 class="modal-title" id="saucerModalLabel">Buscar Producto</h5>
 	                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
 	            </div>
 	            <div class="modal-body">
 	                <div class="form-outline mb-4">
-	                    <input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{4,25}" class="form-control" name="buscar_platillo" id="buscar_platillo" maxlength="25">
-	                    <label for="buscar_platillo" class="form-label">¿Qué estás buscando?</label>
+	                    <input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{4,25}" class="form-control" name="buscar_producto" id="buscar_producto" maxlength="25">
+	                    <label for="buscar_producto" class="form-label">¿Qué estás buscando?</label>
 	                </div>
 	            </div>
 	            <div class="modal-footer">
