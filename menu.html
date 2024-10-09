@@ -15,7 +15,37 @@
 		<script src="./js/sweetalert2.js" ></script>
 		<!-- General Styles, estilos generales abordados por el equipo de desarrolo -->
 		<link rel="stylesheet" href="./css/style.css">
+		<script>
+			function loadProducts() {
+				const script = document.createElement('script');
+				script.src = 'products.js'; // Cambia esto a la ruta correcta
+				document.body.appendChild(script);
+			}
 	
+			function handleResponse(data) {
+				console.log(data); // Aquí manejas la respuesta
+				const productContainer = document.getElementById('product-container');
+	
+				data.products.forEach(product => {
+					const productDiv = document.createElement('div');
+					productDiv.className = 'card shadow-1-strong col';
+					productDiv.innerHTML = `
+						
+							<img class="card-img-top" src="${product.image}" alt="${product.name}" style="padding: 104px;">
+							<div class="card-body text-center">
+								<h5 class="card-title font-weight-bold">${product.name}</h5>
+								<p class="card-text lead"><span class="badge bg-secondary">$${product.price}</span></p>
+								<button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
+								<a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
+							</div>
+						
+					`;
+					productContainer.appendChild(productDiv);
+				});
+			}
+	
+			window.onload = loadProducts; // Cargar productos al iniciar
+		</script>
 	</head>
 <body>
 
@@ -25,7 +55,7 @@
 		<!-- Logo de la empresa ficticia Creada por el equipo de desarrollo -->
 	    <div class="header-brand text-center full-box">
 	        <a href="index.html">
-	            <img src="./assets/img/logo.png" alt="logo" class="img-fluid">
+	            <img src="./assets/img/logo.png" alt="logo" class="img-fluid" >
 	        </a>
 	    </div>
 		<!--Menu-->
@@ -88,194 +118,17 @@
 	</header>
 
 
-	<!-- Content -->
-	<div class="container container-web-page">
-	    <h3 class="font-weight-bold poppins-regular text-uppercase">Catálogo de Productos</h3>
-	    <p class="text-justify">Bienvenido a Emazon, acá encontrara los mejores productos tecnológicos. Puede ordenar los disponibles por categoría 
-	    	haciendo clic en el botón "<i class="fas fa-mobile fa-fw"></i> MENÚ" y 
-			también ordenarlos por orden alfabético o por precio en el botón "<i class="fas fa-sort-alpha-down fa-fw"></i> 
-			ORDENAR POR". Además, puede filtrar los productos por nombre haciendo clic en el botón "<i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR"</p>
+	<div class="container mt-5">
+        <h1 class="text-center">Catálogo de Productos</h1>
+        <div class="row" >
+			<div  class="col" id="product-container"></div>
+		</div>
+    </div>
 
-		<!-- Seccion orientada a filtrar los productos-->
-	    <div class="container-fluid" style="border-top: 1px solid #E1E1E1; padding: 20px; ">
-	        <div class="row align-items-center">
-	            <div class="col-12 col-sm-4 text-center text-sm-start">
-	                <div class="dropdown">
-	                    <button class="btn btn-link dropdown-toggle" type="button" id="categorySubMenu" data-mdb-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                        <i class="fas fa-mobile fa-fw"></i> &nbsp; Menú
-	                    </button>
-						
-	                    <div class="dropdown-menu" aria-labelledby="categorySubMenu">
-	                        <a class="dropdown-item" href="#">Tablets</a>
-	                        <a class="dropdown-item" href="#">Smartphone</a>
-	                        <a class="dropdown-item" href="#">Videojuegos</a>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col-12 col-sm-4 text-center">
-	                <button type="button" class="btn btn-link" data-mdb-toggle="modal" data-mdb-target="#saucerModal">
-	                    <i class="fas fa-search fa-fw"></i> &nbsp; Buscar
-	                </button>
-	            </div>
-	            <div class="col-12 col-sm-4 text-center text-sm-end">
-	                <div class="dropdown">
-	                    <button class="btn btn-link dropdown-toggle" type="button" id="OrderSubMenu" data-mdb-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                        <i class="fas fa-sort-alpha-down fa-fw"></i> &nbsp; Ordenar por
-	                    </button>
-	                    <div class="dropdown-menu" aria-labelledby="OrderSubMenu">
-	                        <a class="dropdown-item" href="#">Ascendente (A-Z)</a>
-	                        <a class="dropdown-item" href="#">Descendente (Z-A)</a>
-	                        <a class="dropdown-item" href="#">Precio (Menor a Mayor)</a>
-	                        <a class="dropdown-item" href="#">Precio (Mayor a Menor)</a>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-	    <div class="container-fluid" style="padding: 20px 0;">
-	        <div class="row">
-	            <div class="col-12 col-md-8">
-	                <p class="text-left lead"><i class="fas fa-search fa-fw"></i> &nbsp; Resultados de la búsqueda: <span class="font-weight-bold poppins-regular text-uppercase">Producto</span></p>
-	            </div>
-	            <div class="col-12 col-md-4">
-	                <button type="button" class="btn btn-danger">
-	                    <i class="fas fa-times fa-fw"></i> &nbsp; Eliminar busqueda
-	                </button>
-	            </div>
-	        </div>
-	    </div>
-
-		<div class="container-cards full-box" style="padding-bottom: 40px;">
-			<!-- Producto -->
-	        <div class="card shadow-1-strong">
-				<!--Imagen -->
-	            <img class="card-img-top" src="./assets/productos/producto1.jpg" alt="nombre_producto">
-	            <!--Cuerpo -->
-				<div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Monitor Janus LED 32</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$1.500.000</span></p>
-	            </div>
-				<!-- Pie -->
-	            <div class="card-body text-center">
-	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
-	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
-	            </div>
-	        </div>
-
-	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/productos/producto2.jpg" alt="nombre_producto">
-	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Iphone 12</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$3.400.000</span></p>
-	            </div>
-	            <div class="card-body text-center">
-	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
-	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
-	            </div>
-	        </div>
-
-	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/productos/producto3.jpg" alt="nombre_producto">
-	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Playstation 4 Pro + Call of Duty Modern Warfare</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$4.000.000</span></p>
-	            </div>
-	            <div class="card-body text-center">
-	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
-	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
-	            </div>
-	        </div>
-
-			<div class="card shadow-1-strong">
-				<!--Imagen -->
-	            <img class="card-img-top" src="./assets/productos/producto1.jpg" alt="nombre_producto">
-	            <!--Cuerpo -->
-				<div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Monitor Janus LED 32</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$1.500.000</span></p>
-	            </div>
-				<!-- Pie -->
-	            <div class="card-body text-center">
-	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
-	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
-	            </div>
-	        </div>
-
-	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/img/img_not_found.jpg" alt="nombre_producto">
-	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Nombre o titulo del producto</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$25.00 USD</span></p>
-	            </div>
-	            <div class="card-body text-center">
-	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
-	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
-	            </div>
-	        </div>
-	        <div class="card shadow-1-strong">
-	            <img class="card-img-top" src="./assets/productos/producto3.jpg" alt="nombre_producto">
-	            <div class="card-body text-center">
-	                <h5 class="card-title font-weight-bold">Playstation 4 Pro + Call of Duty Modern Warfare</h5>
-	                <p class="card-text lead"><span class="badge bg-secondary">$4.000.000</span></p>
-	            </div>
-	            <div class="card-body text-center">
-	                <button type="button" class="btn btn-success btn-sm"><i class="fas fa-shopping-bag fa-fw"></i> &nbsp; Agregar</button>
-	                &nbsp; &nbsp;
-	                <a href="details.html" class="btn btn-info btn-sm"><i class="fas fa-utensils fa-fw"></i> &nbsp; Detalles</a>
-	            </div>
-	        </div>
-	    </div>
-
-	    <nav aria-label="Page navigation example">
-	        <ul class="pagination justify-content-center">
-	            <li class="page-item">
-	                <a class="page-link" href="#">Anterior</a>
-	            </li>
-	            <li class="page-item">
-	                <a class="page-link" href="#">1</a>
-	            </li>
-	            <li class="page-item active">
-	                <a class="page-link" href="#">2</a>
-	            </li>
-	            <li class="page-item">
-	                <a class="page-link" href="#">3</a>
-	            </li>
-	            <li class="page-item">
-	                <a class="page-link" href="#">Siguiente</a>
-	            </li>
-	        </ul>
-	    </nav>
-
-	</div>
-
-	<!-- Modal, se expande clickear buscar -->
-	<div class="modal fade" id="saucerModal" tabindex="-1" aria-hidden="true" aria-labelledby="saucerModalLabel" aria-hidden="true">
-	    <div class="modal-dialog" role="document">
-	        <div class="modal-content">
-	            <div class="modal-header">
-	                <h5 class="modal-title" id="saucerModalLabel">Buscar Producto</h5>
-	                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-	            </div>
-	            <div class="modal-body">
-	                <div class="form-outline mb-4">
-	                    <input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{4,25}" class="form-control" name="buscar_producto" id="buscar_producto" maxlength="25">
-	                    <label for="buscar_producto" class="form-label">¿Qué estás buscando?</label>
-	                </div>
-	            </div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-danger" data-mdb-dismiss="modal"><i class="fas fa-times fa-fw"></i> &nbsp; Cerrar</button>
-	                <button type="button" class="btn btn-info"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar</button>
-	            </div>
-	        </div>
-	    </div>
-	</div>
 
 
 	<!-- Footer -->
